@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsthm, amsmath}
+\usepackage{nccmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=2cm]{geometry}
+
+\title{Teoría de Autómatas y Lenguajes Formales\\[.4\baselineskip]Práctica 1 - Ejercicio 2}
+\author{Marina González Torres}
+\date{}
+
+\begin{document}
+
+\maketitle
+\setlength{\parindent}{0pt}
+
+\section*{Enunciado}
+Dentro de la carpeta 'files', encontramos un archivo TEX en cuyo contenido aparece la cadena $\backslash$usepackage\{amsthm, amsmath\}. Nota: usa grep e ignora los caracteres especiales con $\backslash$. Completa la demostración y responde la pregunta.
+
+\subsection*{Comando usado}
+Para encontrar en la carpeta 'files' el archivo usamos el comando:
+\\ \textbf{grep "$\backslash$usepackage\{amsthm, amsmath\}" \ files /*}
+\\ Tras usar este comando obtenemos que el archivo que contiene dicha cadena es mainP.tex
+\\ 
+\\A continuación muestro lo obtenido con la consola:
+\\
+\\ \includegraphics[width=14cm, height=4cm]{ConsolaP1E2.png}
+
+\clearpage
+\subsection*{mainP.tex}
+El archivo contiene el codigo en \LaTeX \ que genera el siguiente documento:
+\\
+\\ \includegraphics{mainP.png}
+
+\clearpage
+\section*{Resolucion}
+\underline{Nos piden completar la demostración:}
+\\
+\newcommand{\Lb}{\pazocal{L}}
+
+Si $\alpha,\beta,\gamma$ son expresiones regulares entonces se cumple:
+\begin{equation}
+    (\alpha+\beta)\gamma=\alpha\gamma+\beta\gamma
+\end{equation}
+
+
+\begin{proof*}
+Usando la definición descrita en el mainP.tex tenemos que:
+    \begin{multline*}
+        \Lb(((\alpha+\beta)\gamma))= \Lb((\alpha+\beta))\Lb(\gamma)= (\Lb(\alpha)\cup \Lb(\beta))\Lb(\gamma)= \\ \Lb(\alpha)\Lb(\gamma)\cup \Lb(\beta)\Lb(\gamma)= \Lb(\alpha\gamma) \cup \Lb(\beta\gamma) = \Lb(\alpha\gamma + \beta\gamma)
+    \end{multline*}
+\end{proof*}
+
+\underline{Además, nos piden completar el ejemplo:}
+
+\newtheorem{example}{Ejemplo}
+\begin{example}
+Consideremos $L=\{w\in \{a,b\}^* : w \textnormal{ no termina en } ab\}$. Un expresión regular que genera L N es: \\
+(\epsilon+a)(a+b)*a
+
+\end{example}
+
+\end{document}
