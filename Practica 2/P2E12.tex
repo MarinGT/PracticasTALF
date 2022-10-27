@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsthm, amsmath}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=2cm]{geometry}
+
+\title{Practica 2}
+\author{Marina Gonzalez Torres}
+\date{}
+
+\begin{document}
+
+\maketitle
+\setlength{\parindent}{0pt}
+
+\section*{Ejercicios}
+
+\subsection*{Ejercicio 1}
+Consideremos el lenguaje sobre el alfabeto \{a,b\} que sólo contiene a la cadena a.
+
+\begin{enumerate}[label=\alph{enumi})]
+    \item Construye un AFD que reconozca este lenguaje y que rechace todas aquellas cadenas que no pertenezcan al lenguaje.
+    \item Prueba el autómata que has creado mediante la introducción de 6 cadenas.
+\end{enumerate}
+
+\underline{\textbf{Solución:}}
+\\
+\\ \underline{Construcción del lenguaje:}
+\begin{equation*}
+    K = \{q_0, q_1, q_2\}
+\end{equation*}
+\begin{equation*}
+    \Sigma = \{a, b\}
+\end{equation*}
+\begin{equation*}
+    s = q_0
+\end{equation*}
+\begin{equation*}
+    F = \{q_1\}
+\end{equation*}
+\begin{equation*}
+    \bigtriangleup = \{(q_0,a,q_1), (q_0,b,q_2), (q_1,a,q_1), (q_1,b,q_2), (q_2,a,q_2), (q_2,b,q_2)\}
+\end{equation*}
+
+\\ \underline{La prueba en JFLAP quedaría de la siguiente forma:}
+\\ \includegraphics[]{EJ1.png}
+
+\subsection*{Ejercicio 2}
+Automata finito en Octave:
+
+\begin{enumerate}[label=\alph{enumi})]
+    \item Abre el script de Octave \textit{finiteautomata.m} y pruebalo con el ejemplo dado en el repositorio GitHub.
+    \item Especifica en \textit{finiteautomata.json} el autómata creado en la actividad 1 y pruebalo con el script.
+\end{enumerate}
+
+\underline{\textbf{Solución:}}
+\\
+\\ \underline{Probar el automata de GitHub:}
+\\
+\\ \includegraphics[width=16cm]{EJ2a.png}
+\newpage
+\underline{Especificar en el json el automata del ejercicio 1:}
+\begin{verbatim}
+    {
+        "name" : "aa*",
+        "representation" : {
+            "K" : ["q0", "q1", "q2"],
+            "A" : ["a", "b"],
+            "s" : "q0",
+            "F" : ["q1"],
+            "t" : [["q0", "a", "q1"],
+                   ["q0", "b", "q2"],
+                   ["q1", "a", "q1"],
+                   ["q1", "b", "q2"],
+                   ["q2", "a", "q2"],
+                   ["q2", "b", "q2"]]
+        }
+    }
+\end{verbatim}
+
+\textit{Prueba:}
+\\
+\\ \includegraphics[width=16cm]{EJ2b2.png}
+
+\end{document}
