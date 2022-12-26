@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=2cm]{geometry}
+
+\title{Teoría de Autómatas y Lenguajes Formales\\[.4\baselineskip]Práctica 3}
+\author{Marina González Torres}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Ejercicio 1}
+\subsection*{Cree el programa WHILE más simple que calcule la función de divergencia (con cero argumentos) y calcule la codificación de su código.}
+Para realizar este ejercicio vamos a usar el fichero proporcionado llamado "CODE2N". Dicho fichero nos va a devolver la codificación del código WHILE que le pasemos como parametro.
+\\
+\\ Para que el código diverja tenemos que realizar un bucle infinito.
+\\
+\\ \includegraphics[width=8cm]{EJ1P4.png}
+\\
+\\ Sin embargo, al ejecutarlo con Octave se produce un error sin saber muy bien el motivo:
+\\
+\\ \includegraphics[width=14cm]{errorEJ1P4.png}
+
+\newpage
+\section*{Ejercicio 2}
+\subsection*{Cree un script de Octave que enumere todos los vectores.}
+Para crear el scrip también usaremos el script dado llamado "godeldecoding". El script será el siguiente:
+\begin{verbatim}
+    function MostrarVectores(N)
+    for i=0: N-1
+        fprintf('Vector %s: (%s)\n', num2str(i), num2str(godeldecoding(i)))
+    end
+    end
+\end{verbatim}
+Un ejemplo de su ejecución con Octave sería el siguiente:
+\\
+\\ \includegraphics[width=7cm]{EJ2P4.png}
+
+\section*{Ejercicio 3}
+\subsection*{Cree un script de Octave que enumere todos los programas WHILE.}
+Para crear este script usaremos "N2WHILE" que es un script ya proporcionado. El script quedaría de la siguiente forma:
+\begin{verbatim}
+    function MostrarWHILE(N)
+    for i=0: N-1
+        fprintf('Programa %s: %s\n', num2str(i), N2WHILE(i))
+    end
+    end
+\end{verbatim}
+Un ejemplo de su ejecución con Octave sería el siguiente:
+\\
+\\ \includegraphics[width=7cm]{EJ3P4.png}
+\\
+\\El igual del WHILE se ve desplazado aunque desconozco el motivo.
+
+\end{document}
