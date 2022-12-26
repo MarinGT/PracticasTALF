@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=2cm]{geometry}
+
+\title{Teoría de Autómatas y Lenguajes Formales\\[.4\baselineskip]Práctica 3}
+\author{Marina González Torres}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Ejercicio 1}
+\subsection*{Defina la solución de la Maquina de Turing del ejercicio 3.4 de la lista de ejercicio y pruebe su correcto funcionamiento.}
+El ejercicio 3.4 nos dice que debemos probar que la funcion add(x, y) con x e y perteneciente a los números naturales es computable por Turing usando la notación unaria \{\}
+\\
+\\ La máquina de Turing simulada con el JFlap quedaría de la siguiente forma:
+\\ \includegraphics[width=18.5cm]{Ejercicio 1.jpg}
+Para poder visualizar el correcto funcionamiento adjunto un ejemplo 
+ de ejecución múltiple:
+\\
+\\ \includegraphics[width=15.5cm]{Demostracion.png}
+
+\section*{Ejercicio 2}
+\subsection*{Defina una función recursiva para la suma de tres valores.}
+Para realizar este ejercicio hemos usado unos ficheros existentes en el repositorio de "talfuma" llamados "recursivefunctions" y "evalrecfunction".
+\\ En el primer fichero hemos añadido una funcion a la que hemos llamado addition2 que realiza la función recursiva de tres valores.
+\\
+\\ \includegraphics[width=10cm]{FuncionEj2.png}
+\\
+\\ Luego hemos probado su funcionamiento con Octave y un ejemplo de ello sería el siguiente:
+\\
+\\ \includegraphics[width=10cm]{OctaveEj2.png}
+\\
+
+\section*{Ejercicio 3}
+\subsection*{Implemente un programa WHILE que calcule la suma de tres valores. Debe utilizar una variable auxiliar que acumule el resultado de la suma.}
+La función WHILE que implementa la suma de los tres valores quedaría de la siguiente manera:
+\\
+\\ \includegraphics[width=10cm]{Ejercicio3.png}
+\\
+\\ Ejemplo de ejecución:
+\\
+\\ \includegraphics[width=15cm]{Ejercicio3ej.png}
+
+\end{document}
